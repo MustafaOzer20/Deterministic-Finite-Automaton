@@ -54,7 +54,7 @@ class DynamicDFA:
     def configState(self, name, **kwargs):
         if list(kwargs.keys()) != self.sigma:
             raise KeyError("Your dictionary contains Invalid keys.")
-        if None in kwargs.keys():
+        if None in kwargs.values():
             raise ValueError("DFA not contains 'None' value.")
         state = self.states[name]
         for i in kwargs.keys():
