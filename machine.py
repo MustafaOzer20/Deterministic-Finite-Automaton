@@ -16,7 +16,7 @@ class State:
         return self.transections.keys()
 
 
-    def __str__(self) -> str:
+    def __repr__(self):
         return f'{self.name}, {self.state}'
 
 
