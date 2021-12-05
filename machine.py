@@ -1,5 +1,4 @@
 class State:
-    transections = dict()
     def __init__(self, name, state="normal", **kwargs):
         if len(kwargs) == 0:
             raise Exception("State must have length greater than zero.")
@@ -23,13 +22,13 @@ class State:
 
 
 class DynamicDFA:
-    L = None
-    sigma = None
-    begin = None
-    states = dict()
 
     def __init__(self, example_state):
         # Example state's type must be State
+        self.L = None
+        self.sigma = None
+        self.begin = None
+        self.states = dict()
         self.sigma = list(example_state.get_keys())
 
     def addState(self, state):
