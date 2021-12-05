@@ -42,7 +42,10 @@ class DynamicDFA:
         for letter in array:
             if letter in self.sigma:
                 print(f"{current} -> {letter}")
-                current = current.transections[letter]
+                if current != None:
+                    current = current.transections[letter]
+                else:
+                    raise Exception("Please make sure you have configured all states. 'self.configState'")
             else:
                 return f"invalid input: {letter}"
         print(current)
